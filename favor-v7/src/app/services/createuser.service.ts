@@ -9,6 +9,7 @@ export interface User {
   password: string;
   uid: string;
   tokens: number;
+  ctasks: number;
 }
 
 @Injectable({
@@ -28,7 +29,8 @@ export class CreateuserService {
     this.user.email = value.email;
     this.user.phone = value.phone;
     this.user.uid = uid;
-    this.user.tokens = 5;
+    this.user.tokens = 0;
+    this.user.ctasks = 0;
     this.db.collection("users").doc(uid).set(this.user);
   }
 }

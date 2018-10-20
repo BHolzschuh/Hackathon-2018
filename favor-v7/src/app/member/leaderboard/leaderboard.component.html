@@ -1,3 +1,24 @@
-<p>
-  leaderboard works!
-</p>
+<div class="row">
+
+  <div class="col">
+    <table class="table table-bordered table-dark">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First</th>
+          <th scope="col">Last</th>
+          <th scope="col">Completed</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let leader of leaders | async; let i = index">
+          <th scope="row">{{i + 1}}</th>
+          <td>{{leader.first}}</td>
+          <td>{{leader.last}}</td>
+          <td>{{leader.ctasks}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

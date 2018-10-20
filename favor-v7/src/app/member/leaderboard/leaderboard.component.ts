@@ -1,4 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { LeaderService } from '../../services/leader.service';
+import { Observable } from 'rxjs';
+
+export interface User {
+  first: string;
+  last: string;
+  ctasks: number;
+}
 
 @Component({
   selector: 'app-leaderboard',
@@ -7,9 +15,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LeaderboardComponent implements OnInit {
 
-  constructor() { }
+  counter = 1;
+
+  leaders: Observable<User[]>;
+
+  constructor(
+    private leaderService: LeaderService,
+  ) { }
 
   ngOnInit() {
+    this.leaders = this.leaderService.getLeaders();
   }
+
 
 }

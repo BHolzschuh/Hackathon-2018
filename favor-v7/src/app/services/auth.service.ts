@@ -18,11 +18,8 @@ export class AuthService {
     try {
       const result = await this.afAuth.auth.signInWithEmailAndPassword(value.email, value.password);
       if (result) {
-        //this.storage.set(TOKEN_KEY, result.user.uid).then(res => {
-        //this.authenticationState.next(true);
-        //});
         console.log(result);
-        this.router.navigateByUrl('members/dash');
+        this.router.navigateByUrl('member/dash');
       }
     } catch (e) {
       console.log(e.code);
@@ -34,18 +31,18 @@ export class AuthService {
     try {
       const result = await this.afAuth.auth.createUserWithEmailAndPassword(value.email, value.password);
       if (result) {
-        //this.storage.set(TOKEN_KEY, result.user.uid).then(res => {
-        //this.authenticationState.next(true);
-        //});
-        //this.afAuth.addUser(value, this.getUID());
         console.log('user registered');
         this.userService.addUser(value, this.getUID());
-        this.router.navigateByUrl('members/dash');
+        this.router.navigateByUrl('member/dash');
       }
     } catch (e) {
       console.error(e);
       return this.checkErrors(e.code);
     }
+  }
+
+  logout() {
+    this.afAuth.auth.signOut();
   }
 
   getUID() {

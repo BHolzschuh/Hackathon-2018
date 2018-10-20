@@ -22,7 +22,7 @@ export class AuthService {
         //this.authenticationState.next(true);
         //});
         console.log(result);
-        this.router.navigateByUrl('members');
+        this.router.navigateByUrl('members/dash');
       }
     } catch (e) {
       console.log(e.code);
@@ -40,7 +40,7 @@ export class AuthService {
         //this.afAuth.addUser(value, this.getUID());
         console.log('user registered');
         this.userService.addUser(value, this.getUID());
-        this.router.navigateByUrl('members');
+        this.router.navigateByUrl('members/dash');
       }
     } catch (e) {
       console.error(e);

@@ -1,0 +1,10 @@
+<div *ngFor='let favor of favors | async'>
+  <div *ngIf='favor.accepted == false'>
+    {{favor.type}}<br>
+    {{favor.time}}<br>
+    {{favor.cid}}<br>
+    {{favor.sid}}<br>
+    {{favor.accepted}}<br>
+    {{favor.completed}}
+  </div>
+</div>

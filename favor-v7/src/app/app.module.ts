@@ -19,6 +19,7 @@ import { PublicComponent } from './public/public/public.component';
 import { MembersComponent } from './member/members/members.component';
 import { HeaderPrivateComponent } from './member/header-private/header-private.component';
 import { FooterComponent } from './footer/footer.component';
+import { FavorlistComponent } from './member/favorlist/favorlist.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { FooterComponent } from './footer/footer.component';
     PublicComponent,
     MembersComponent,
     HeaderPrivateComponent,
-    FooterComponent
+    FooterComponent,
+    FavorlistComponent
   ],
   imports: [
     BrowserModule,

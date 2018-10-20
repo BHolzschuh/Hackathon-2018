@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  @Output() OnRegister = new EventEmitter<number>();
 
   constructor(
     private router: Router,
@@ -16,7 +17,7 @@ export class LoginComponent implements OnInit {
   }
 
   register() {
-    this.router.navigateByUrl('/register');
+    this.OnRegister.emit(2);
   }
 
 }

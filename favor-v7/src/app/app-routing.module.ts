@@ -4,7 +4,9 @@ import { PublicComponent } from './public/public/public.component';
 import { MembersComponent } from './member/members/members.component';
 import { LoginComponent } from './public/login/login.component';
 import { RegisterComponent } from './public/register/register.component';
-import { FavorlistComponent } from './member/favorlist/favorlist.component';
+import { DashComponent } from './member/dash/dash.component';
+import { ProfileComponent } from './member/profile/profile.component';
+import { LeaderboardComponent } from './member/leaderboard/leaderboard.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'public/login', pathMatch: 'full' },
@@ -17,14 +19,14 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'members',
+    path: 'member',
     component: MembersComponent,
     children: [
-      { path: 'dash', component: FavorlistComponent },
-      { path: 'profile', component: MembersComponent },
-      { path: 'leaderboard', component: MembersComponent },
+      { path: 'dash', component: DashComponent },
+      { path: 'profile', component: ProfileComponent },
+      { path: 'leaderboard', component: LeaderboardComponent },
     ]
-  },
+  }
 ];
 
 @NgModule({

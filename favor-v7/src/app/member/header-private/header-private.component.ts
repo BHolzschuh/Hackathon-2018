@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header-private',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderPrivateComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router,
+  ) { }
 
   ngOnInit() {
+  }
+
+  goHomepage() {
+    this.router.navigateByUrl('member/dash');
+  }
+
+  pushProfile() {
+    this.router.navigateByUrl('member/profile');
+  }
+
+  pushLeaderboard() {
+    this.router.navigateByUrl('member/leaderboard');
   }
 
 }

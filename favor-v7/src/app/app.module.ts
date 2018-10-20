@@ -20,6 +20,9 @@ import { MembersComponent } from './member/members/members.component';
 import { HeaderPrivateComponent } from './member/header-private/header-private.component';
 import { FooterComponent } from './footer/footer.component';
 import { FavorlistComponent } from './member/favorlist/favorlist.component';
+import { DashComponent } from './member/dash/dash.component';
+import { ProfileComponent } from './member/profile/profile.component';
+import { LeaderboardComponent } from './member/leaderboard/leaderboard.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import { FavorlistComponent } from './member/favorlist/favorlist.component';
     MembersComponent,
     HeaderPrivateComponent,
     FooterComponent,
-    FavorlistComponent
+    FavorlistComponent,
+    DashComponent,
+    ProfileComponent,
+    LeaderboardComponent,
   ],
   imports: [
     BrowserModule,

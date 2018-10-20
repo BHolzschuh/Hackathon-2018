@@ -1,10 +1,10 @@
-<div *ngFor='let favor of favors | async'>
-  <div *ngIf='favor.accepted == false'>
-    {{favor.type}}<br>
-    {{favor.time}}<br>
-    {{favor.cid}}<br>
-    {{favor.sid}}<br>
-    {{favor.accepted}}<br>
-    {{favor.completed}}
+<div class="row">
+  <div class="col">
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let favor of favors | async" (click)="selectTask(task)">
+        {{favor.name}}
+      </li>
+    </ul>
   </div>
+
 </div>

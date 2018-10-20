@@ -63,4 +63,5 @@ export class AuthService {
       return "That email is already in use";
     }
   }
+
 }

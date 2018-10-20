@@ -2,12 +2,9 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 
 export interface Favor {
-  accepted: boolean;
-  completed: boolean;
   time: string;
   type: string;
-  cid: string;
-  sid: string;
+  name: string;
 }
 
 @Injectable({
@@ -29,13 +26,4 @@ export class FavorService {
     return this.favorsCollection.valueChanges();
   }
 
-  addFavor(value, cid) {
-    this.favor.accepted = false;
-    this.favor.completed = false;
-    this.favor.cid = cid;
-    this.favor.sid = '';
-    this.favor.time = '6pm';
-    this.favor.type = value.type;
-    this.db.collection("favors").doc(cid).set(this.favor);
-  }
 }

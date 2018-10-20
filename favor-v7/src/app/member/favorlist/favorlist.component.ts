@@ -3,7 +3,9 @@ import { FavorService } from '../../services/favor.service';
 import { Observable } from 'rxjs';
 
 export interface Favors {
-
+  name: string;
+  type: string;
+  time: string;
 }
 
 @Component({

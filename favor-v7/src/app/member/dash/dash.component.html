@@ -1,44 +1,14 @@
-   <h1 id="greeting">Welcome Jim</h1>
-   <div class="row">
-        <div class="col">
-            <button id="aid_btn" type="button" class="btn btn-primary btn-lg">Aid</button>
-            <button id = "request_btn" type="button" class="btn btn-danger btn-lg">Request Help</button>
-  
-        </div>
-        <div class="col">
-          <h3>Points</h3>
-          <h2>15</h2>
-        </div>
-        <div class="col">
-            <h3>Leaderboards</h3>
-            <table class="table table-bordered table-dark">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                  </tr>
-                </tbody>
-              </table>
-        </div>
-      </div>
+<h1 id="greeting">Welcome {{user.first}} {{user.last}}</h1>
+<div class="row">
+
+  <div class="col-6">
+    <h1>Task List</h1>
+    <app-favorlist></app-favorlist>
+  </div>
+
+  <div class="col-6">
+    <h1>Task Details</h1>
+    <!--component 2-->
+  </div>
+
+</div>

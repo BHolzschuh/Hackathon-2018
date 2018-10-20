@@ -1,3 +1,33 @@
-<p>
-  register works!
-</p>
+<div class="row">
+  <div class="col">
+    <p>Please login.</p>
+    <form class="form" [formGroup]="registerForm">
+
+      <div class='validation-error'>{{message}}</div>
+
+      <label>First</label>
+      <input class="form-control" type="text" formControlName="first" [(ngModel)]="user.first">
+
+      <label>Last</label>
+      <input class="form-control" type="text" formControlName="last" [(ngModel)]="user.last">
+
+      <label>Phone #</label>
+      <input class="form-control" type="text" formControlName="phone" [(ngModel)]="user.phone">
+
+      <label>Email</label>
+      <input class="form-control" type="text" formControlName="email" [(ngModel)]="user.email">
+
+      <label>Password</label>
+      <input class="form-control" type="password" formControlName="password" [(ngModel)]="user.password">
+
+      <button type="button" class="btn btn-dark" [disabled]="registerForm.invalid" (click)="register(user)">Register</button>
+      <button type="button" class="btn btn-dark" (click)="goBack()">Go Back</button>
+
+      <div *ngIf="registerForm.invalid">
+        <p class="pass-text">Password must be at least eight characters including a
+          number an uppercase letter and a lowercase letter.</p>
+      </div>
+
+    </form>
+  </div>
+</div>

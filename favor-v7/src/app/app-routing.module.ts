@@ -4,6 +4,7 @@ import { PublicComponent } from './public/public/public.component';
 import { MembersComponent } from './member/members/members.component';
 import { LoginComponent } from './public/login/login.component';
 import { RegisterComponent } from './public/register/register.component';
+import { DashComponent } from './member/dash/dash.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'public/login', pathMatch: 'full' },
@@ -15,7 +16,13 @@ const routes: Routes = [
       { path: 'register', component: RegisterComponent },
     ]
   },
-  { path: 'members', component: MembersComponent },
+  {
+  path: 'member',
+  component: MembersComponent,
+  children: [
+    { path: 'dash', component: DashComponent }
+  ]
+}
 ];
 
 @NgModule({

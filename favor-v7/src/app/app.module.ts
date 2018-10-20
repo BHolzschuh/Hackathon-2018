@@ -18,6 +18,7 @@ import { PublicComponent } from './public/public/public.component';
 import { MembersComponent } from './member/members/members.component';
 import { HeaderPrivateComponent } from './member/header-private/header-private.component';
 import { FooterComponent } from './footer/footer.component';
+import { DashComponent } from './member/dash/dash.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { FooterComponent } from './footer/footer.component';
     PublicComponent,
     MembersComponent,
     HeaderPrivateComponent,
-    FooterComponent
+    FooterComponent,
+    DashComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FavorService } from '../../services/favor.service';
 import { Observable } from 'rxjs';
+import { map, first } from 'rxjs/operators';
 
 export interface Favors {
   name: string;
@@ -25,6 +26,14 @@ export class FavorlistComponent implements OnInit {
 
   ngOnInit() {
     this.favors = this.favorservice.getFavors();
+    this.favors.subscribe(res => {
+      for (let item of res) {
+        if (item) {
+          this.selectedFavor = item;
+          break;
+        }
+      }
+    })
   }
 
   selectTask(favor) {

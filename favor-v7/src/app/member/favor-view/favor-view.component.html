@@ -1,0 +1,23 @@
+<div *ngIf="favor">
+  <div class="row">
+    <div class="col">
+      <h2 class="title">Task Details</h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col content-margin">
+      <h3>Name: {{favor.name}}</h3>
+      <h4>Type: {{favor.type}}</h4>
+      <h4>Date: {{favor.date}}</h4>
+      <h4>Time: {{favor.time}}</h4>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col content-margin">
+      <button class="btn" (click)="addFavor(favor)">Accept</button>
+    </div>
+  </div>
+
+</div>

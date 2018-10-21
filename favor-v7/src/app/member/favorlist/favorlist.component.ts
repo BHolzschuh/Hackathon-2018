@@ -6,6 +6,7 @@ export interface Favors {
   name: string;
   type: string;
   time: string;
+  date: string;
 }
 
 @Component({
@@ -16,6 +17,7 @@ export interface Favors {
 export class FavorlistComponent implements OnInit {
 
   favors: Observable<Favors[]>;
+  selectedFavor: Favors;
 
   constructor(
     private favorservice: FavorService,
@@ -23,6 +25,11 @@ export class FavorlistComponent implements OnInit {
 
   ngOnInit() {
     this.favors = this.favorservice.getFavors();
+  }
+
+  selectTask(favor) {
+    console.log(favor);
+    this.selectedFavor = favor;
   }
 
 }

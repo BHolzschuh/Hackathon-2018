@@ -23,6 +23,7 @@ import { FavorlistComponent } from './member/favorlist/favorlist.component';
 import { DashComponent } from './member/dash/dash.component';
 import { ProfileComponent } from './member/profile/profile.component';
 import { LeaderboardComponent } from './member/leaderboard/leaderboard.component';
+import { FavorViewComponent } from './member/favor-view/favor-view.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { LeaderboardComponent } from './member/leaderboard/leaderboard.component
     DashComponent,
     ProfileComponent,
     LeaderboardComponent,
+    FavorViewComponent,
   ],
   imports: [
     BrowserModule,

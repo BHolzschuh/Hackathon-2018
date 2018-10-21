@@ -1,10 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/user.service';
+import { Observable } from 'rxjs';
 
 export interface User {
   first: string;
   last: string;
   ctasks: number;
+}
+
+export interface Favors {
+  name: string;
+  type: string;
+  time: string;
+  date: string;
+  complete: boolean;
 }
 
 @Component({
@@ -15,6 +24,7 @@ export interface User {
 export class ProfileComponent implements OnInit {
 
   user = {} as User;
+  favors: Observable<Favors[]>;
 
   constructor(
     private userService: UserService,
@@ -24,6 +34,7 @@ export class ProfileComponent implements OnInit {
     this.userService.getUserInfo().subscribe(res => {
       this.user = res;
     })
+    this.favors = this.userService.getUserFavors()
   }
 
 }

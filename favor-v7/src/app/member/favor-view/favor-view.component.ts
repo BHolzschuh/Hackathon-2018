@@ -18,17 +18,20 @@ export class FavorViewComponent implements OnInit {
   @Input()
   favor: Favor;
 
+  message;
+
   constructor(
     private favorService: FavorService,
   ) { }
 
   ngOnInit() {
     console.log(this.favor);
+    this.message = "";
   }
 
   addFavor(favor) {
-    //console.log(favor);
     this.favorService.addFavor(favor);
+    this.message = "Task added to profile";
   }
 
 }

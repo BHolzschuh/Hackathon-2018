@@ -42,4 +42,8 @@ export class UserService {
     return this.favorCollection.valueChanges();
   }
 
+  delete(entry) {
+    this.afS.collection('users/' + this.uid + '/tasks').doc(entry.name).delete();
+  }
+
 }

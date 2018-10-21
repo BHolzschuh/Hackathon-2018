@@ -37,4 +37,9 @@ export class ProfileComponent implements OnInit {
     this.favors = this.userService.getUserFavors()
   }
 
+  deleteFavor(favor) {
+    console.log(favor);
+    this.userService.delete(favor);
+  }
+
 }

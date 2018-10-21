@@ -22,7 +22,7 @@ export class DashComponent implements OnInit {
   ngOnInit() {
     this.userService.getUserInfo().subscribe(res => {
       this.user = res;
-    })
+    });
   }
 
 

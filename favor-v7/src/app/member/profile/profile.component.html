@@ -1,16 +1,18 @@
-<div class="row">
-  <div class="col-5">
-    <h1>{{user.first}} {{user.last}}</h1> <br>
-    <h2>Completed: {{user.ctasks}}</h2>
+<div class="row top-content">
+  <div class="col-4">
+    <img class="rounded" src="../../../assets/profile-pic.png">
+    <h1 class="display-4 name">{{user.first}} {{user.last}}</h1>
+    <h2 class="display-4 credits">Completed: {{user.ctasks}}</h2>
+    <h2 class="display-4 credits">Credits: {{user.tokens}}</h2>
   </div>
 
-  <div class="col-7">
+  <div class="col-8">
 
     <div class="row">
       <div class="col">
-        <h1>Upcoming</h1>
-        <table class="table table-bordered table-dark">
-          <thead>
+        <h1 class="sub-title display-4">Upcoming</h1>
+        <table class="table table-bordered">
+          <thead class="fau-blue">
             <tr>
               <th scope="col" class="x-align">Cancel</th>
               <th scope="col">Name</th>
@@ -37,9 +39,9 @@
 
     <div class="row">
       <div class="col">
-        <h1>Completed</h1>
-        <table class="table table-bordered table-dark">
-          <thead>
+        <h1 class="display-4 sub-title bottom-table">Completed</h1>
+        <table class="table table-bordered">
+          <thead class="fau-red">
             <tr>
               <th scope="col">Name</th>
               <th scope="col">Type</th>
@@ -50,7 +52,7 @@
           <tbody>
             <ng-container *ngFor="let favor of favors | async">
               <tr *ngIf="favor.complete">
-                <th scope="row">{{favor.name}}</th>
+                <td>{{favor.name}}</td>
                 <td>{{favor.type}}</td>
                 <td>{{favor.time}}</td>
                 <td>{{favor.date}}</td>

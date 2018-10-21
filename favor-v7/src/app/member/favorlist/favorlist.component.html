@@ -1,13 +1,13 @@
-<div class="row">
-  <div class="col-md-5">
-    <h2 class="title">Available Tasks</h2>
+<div class="row dash-row">
+  <div class="col-md-6">
+    <h2 class="display-4 sub-title title">Available Tasks</h2>
     <ul class="list-group">
       <li class="list-group-item" *ngFor="let favor of favors | async" (click)="selectTask(favor)" [class.active]="favor === selectedFavor">
         {{favor.name}}
       </li>
     </ul>
   </div>
-  <div class="col-md-4 fview-offset">
+  <div class="col-md-6 fview-offset">
     <app-favor-view [favor]="selectedFavor"></app-favor-view>
   </div>
 </div>

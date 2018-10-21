@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { AuthService } from './auth.service';
 import { AngularFirestoreDocument, AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { defineBase } from '@angular/core/src/render3';
 
 export interface User {
   first: string;
   last: string;
   ctasks: number;
+  tokens: number;
 }
 
 export interface Favor {
@@ -44,6 +46,10 @@ export class UserService {
 
   delete(entry) {
     this.afS.collection('users/' + this.uid + '/tasks').doc(entry.name).delete();
+  }
+
+  updateUser(count) {
+    this.afS.collection("users").doc(this.uid).update({ ctasks: count, tokens: count });
   }
 
 }

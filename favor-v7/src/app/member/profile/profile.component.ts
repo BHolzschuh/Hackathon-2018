@@ -6,6 +6,7 @@ export interface User {
   first: string;
   last: string;
   ctasks: number;
+  tokens: number;
 }
 
 export interface Favors {
@@ -33,8 +34,17 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
     this.userService.getUserInfo().subscribe(res => {
       this.user = res;
-    })
-    this.favors = this.userService.getUserFavors()
+    });
+    this.favors = this.userService.getUserFavors();
+    this.favors.subscribe(ref => {
+      let count = 0;
+      for (let item of ref) {
+        if (item.complete) {
+          count++;
+        }
+      }
+      this.userService.updateUser(count);
+    });
   }
 
   deleteFavor(favor) {

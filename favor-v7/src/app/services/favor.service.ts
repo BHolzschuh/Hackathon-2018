@@ -26,7 +26,7 @@ export class FavorService {
 
   getFavors() {
     this.favorsCollection = this.db.collection('favors', ref => {
-      return ref.orderBy('time');
+      return ref.orderBy('sort');
     });
     return this.favorsCollection.valueChanges();
   }

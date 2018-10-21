@@ -1,18 +1,17 @@
 <div class="row">
-  <div class="col">
-    <p>Please login.</p>
+  <div class="col rounded login-col">
+    <h2 class="title">Sign In</h2>
     <form class="form" [formGroup]="loginForm">
 
       <div class='validation-error'>{{message}}</div>
 
-      <label>Email</label>
-      <input class="form-control" type="text" formControlName="email" [(ngModel)]="user.email">
+      <input class="form-control" placeholder="Email Address" type="text" formControlName="email" [(ngModel)]="user.email">
 
-      <label>Password</label>
-      <input class="form-control" type="password" formControlName="password" [(ngModel)]="user.password">
+      <input class="form-control bottom-btn" placeholder="Password" type="password" formControlName="password"
+        [(ngModel)]="user.password">
 
-      <button type="button" class="btn btn-dark" [disabled]="loginForm.invalid" (click)="login(user)">Login</button>
-      <button type="button" class="btn btn-dark" (click)="register()">Register</button>
+      <button type="button" id="top-butt" class="btn btn-dark btn-lg btn-block fau-blue" (click)="login(user)">Login</button>
+      <button type="button" class="btn btn-danger btn-lg btn-block fau-red" (click)="register()">Register</button>
 
     </form>
   </div>
